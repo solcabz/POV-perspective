@@ -177,8 +177,8 @@ function start() {
     if (document.getElementById('finderwrap').getAttribute('data-type') === "vod"){
         document.getElementById('finderwrap').setAttribute('data-offset', cleanTime(document.body.querySelector(playertime).innerText));//get seconds back
         var namet = secondsCalc(0).concat(" " + rawname);
-        
     }
+    apireturnu(userquery(rawname, 100),rawname);
   }
 
 function getinput(){

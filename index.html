@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vod Perspective</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Twitch Vod Perspective</h1>
+      <div id="twitch-embed"></div>
+      <p id="videoLength"></p>
+      <p data-a-target="player-seekbar-current-time" class="CoreText-sc-1txzju1-0 ffZeRf">00:00:00</p>
+      <div class="Layout-sc-1xcs6mc-0 iofXOu">
+      <div class="vodPerspective">
+        <div>
+          <label>Link: </label>
+          <input type="text" id="urlTwitch" class="urlTwitch" />
+        </div>
+        <button onclick="loadTwitchVideo()">Load Video</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
+<script src="/data.js"></script>
+
+<script>
+  function loadTwitchVideo() {
+    var input = document.getElementById("urlTwitch");
+    var videoUrl = input.value;
+    var videoId = getVideoIdFromUrl(videoUrl);
+
+    new Twitch.Embed("twitch-embed", {
+      width: 680,
+      height: 420,
+      video: videoId,
+      autoplay: false,
+      time: '',
+    });
+
+    // Enable the "vodPerspective" div
+    var vodPerspectiveDiv = document.querySelector(".vodPerspective");
+    var inputField = vodPerspectiveDiv.querySelector(".urlTwitch");
+    var generateButton = vodPerspectiveDiv.querySelector("button");
+    inputField.disabled = false;
+    generateButton.disabled = false;
+  }
+
+  function getVideoIdFromUrl(url) {
+    var parts = url.split("/");
+    var videoId = parts[parts.length - 1];
+    return videoId;
+  }
+</script>

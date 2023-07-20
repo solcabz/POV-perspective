@@ -143,16 +143,20 @@ form{
   width: 100vw;
   margin: 0;
   box-sizing: border-box;
+  margin: 10px 0;
 }
 
 #botd {
   display: flex;
-  flex-wrap: wrap;
-  padding: 5px;
-  min-height: initial;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-height: initial;
   height: 50%;
-  width: 100%;
-  position: relative;
+  width: 100vw;
+  margin: 0;
+  box-sizing: border-box;
+  margin: 10px 0;
 }
 
 .ce {
@@ -201,7 +205,7 @@ form{
   overflow: hidden;
 }
 .plink.active{
-  color: #ff6700;
+  color: #2b2b2b;
 }
 
 .clink{
@@ -216,17 +220,3 @@ form{
   margin-bottom: .5%;
 }
 
-#expressvod {
-  box-sizing: border-box;
-  opacity: 50%;
-  background-color: #18181b;
-  border-radius:6px;
-  color: #efeff1;
-  font-size:12px;
-  padding-left: 5px;
-  height: 50%;
-  width: 25%;
-  flex-grow: 0 !important;
-  flex-shrink: 0 !important;
-  flex-wrap: nowrap !important;
-}

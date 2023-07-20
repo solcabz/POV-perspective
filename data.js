@@ -271,14 +271,14 @@ function cl(link, color, name){ //create link
     cn.innerText = name.toUpperCase();
     const close = document.getElementById('botd').appendChild(document.createElement('div'))
     close.setAttribute("class", "clink")
-    close.innerText = "❌";
+    close.innerText = "✖";
     close.addEventListener("click", function() {
         if (close.classList.contains('active')){
             ce.remove()+close.remove();
             document.getElementById('infodiv').innerText = "Enter name to search vods. Ctrl+Enter to instantly open links.";
         }
     })
-    if(color === "green"){(ce.style.background = "#05483F") && (ce.style.cursor='pointer')}; 
+    if(color === "green"){(ce.style.background = "#00cc7a") && (ce.style.cursor='pointer')}; 
     if(color === "red"){(ce.style.background = "#7F0423") && (ce.style.cursor='default')}; 
     if(color === "gray"){(ce.style.background = "#505050") && (ce.style.cursor='default')};
     if(color ==="red" || color ==="gray"){

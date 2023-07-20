@@ -11,7 +11,7 @@
       <h1>Twitch Vod Perspective</h1>
       <div id="twitch-embed"></div>
       <p id="videoLength"></p>
-      <p data-a-target="player-seekbar-current-time" class="CoreText-sc-1txzju1-0 ffZeRf">00:00:00</p>
+      <p data-a-target="player-seekbar-current-time" class="CoreText-sc-1txzju1-0 ffZeRf">01:00:00</p>
       <div class="Layout-sc-1xcs6mc-0 iofXOu">
       <div class="vodPerspective">
         <div>
@@ -28,18 +28,26 @@
 <script src="/data.js"></script>
 
 <script>
+  let twitchPlayer = null; // Variable to store the Twitch embed player instance
+
   function loadTwitchVideo() {
     var input = document.getElementById("urlTwitch");
     var videoUrl = input.value;
     var videoId = getVideoIdFromUrl(videoUrl);
 
-    new Twitch.Embed("twitch-embed", {
-      width: 680,
-      height: 420,
-      video: videoId,
-      autoplay: false,
-      time: '',
-    });
+    if (!twitchPlayer) {
+      // If the Twitch player instance doesn't exist, create a new one
+      twitchPlayer = new Twitch.Embed("twitch-embed", {
+        width: 680,
+        height: 420,
+        video: videoId,
+        autoplay: false,
+        time: '',
+      });
+    } else {
+      // If the Twitch player instance exists, update the video ID
+      twitchPlayer.setVideo(videoId);
+    }
 
     // Enable the "vodPerspective" div
     var vodPerspectiveDiv = document.querySelector(".vodPerspective");

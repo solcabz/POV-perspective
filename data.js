@@ -251,9 +251,9 @@ function cl(link, color, name){ //create link
     ce.setAttribute("class","ce")
         if(color === "green"){
         re = /([^\=]+$)/; //regex to get time after last = for next line
-        ce.setAttribute("data-title", "@".concat(re.exec(link)[0])); //sets the target vod time to data-title for hover display
+        ce.setAttribute( "data-title", " @".concat(re.exec(link)[0])); //sets the target vod time to data-title for hover display
         ce.setAttribute("data-title2", link);
-        ce.setAttribute("data-title3", secondsCalc(parseInt(document.getElementById('finderwrap').getAttribute('data-offset')))+"-->");
+        ce.setAttribute("data-title3", secondsCalc(parseInt(document.getElementById('finderwrap').getAttribute('data-offset'))));
         ce.addEventListener("click", function() {
             window.open(ce.dataset.title2, "_blank")
         })

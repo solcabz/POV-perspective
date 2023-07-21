@@ -167,9 +167,7 @@ form{
   max-height: initial;
   height: 50%;
   width: 100vw;
-  margin: 0;
   box-sizing: border-box;
-  margin: 10px 0;
 }
 
 .ce {
@@ -177,11 +175,10 @@ form{
   height: 100%;
   margin-right: .5%;
   border-radius:6px;
-  padding-left: 7px;
-  padding-right: 7px;
+  padding: 0 7px;
   display: flex;
   align-items: center;
-  margin-bottom:  .5%;
+  margin:  .5% 5px;
   cursor: pointer;
   text-align: center;
 }
@@ -230,7 +227,8 @@ form{
   font-size: 1.75rem;
   cursor: pointer;
   display: inline-block;
-  margin-bottom: .5%;
+  margin-bottom: 10px;
+  margin: 0 5px;
 }
 
 

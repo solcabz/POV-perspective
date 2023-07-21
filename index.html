@@ -9,12 +9,20 @@
   <body>
     <div class="container">
       <h1>Twitch Vod Perspective</h1>
+
       <div id="twitch-embed"></div>
-      <p id="videoLength"></p>
-      <p data-a-target="player-seekbar-current-time" class="CoreText-sc-1txzju1-0 ffZeRf">01:00:00</p>
-      <div class="Layout-sc-1xcs6mc-0 iofXOu">
+     
+      <div class="vod1">
+        <div class="urlWrap">
+          <label>Link: </label>
+          <input type="text" id="inputField" oninput="displayValue()">
+        </div>
+        <p data-a-target="player-seekbar-current-time" class="CoreText-sc-1txzju1-0 ffZeRf" id="displayParagraph">00:00:00</p>
+      </div>
+      
+      <div class="Layout-sc-1xcs6mc-0 iofXOu"></div>
       <div class="vodPerspective">
-        <div>
+        <div class="urlWrap">
           <label>Link: </label>
           <input type="text" id="urlTwitch" class="urlTwitch" />
         </div>
@@ -26,41 +34,6 @@
 
 <script src="https://embed.twitch.tv/embed/v1.js"></script>
 <script src="/data.js"></script>
+<script src="/timeInput.js"></script>
+<script src="/loadTwitch.js"></script>
 
-<script>
-  let twitchPlayer = null; // Variable to store the Twitch embed player instance
-
-  function loadTwitchVideo() {
-    var input = document.getElementById("urlTwitch");
-    var videoUrl = input.value;
-    var videoId = getVideoIdFromUrl(videoUrl);
-
-    if (!twitchPlayer) {
-      // If the Twitch player instance doesn't exist, create a new one
-      twitchPlayer = new Twitch.Embed("twitch-embed", {
-        width: 680,
-        height: 420,
-        video: videoId,
-        autoplay: false,
-        allowfullscreen: false,
-        time: '',
-      });
-    } else {
-      // If the Twitch player instance exists, update the video ID
-      twitchPlayer.setVideo(videoId);
-    }
-
-    // Enable the "vodPerspective" div
-    var vodPerspectiveDiv = document.querySelector(".vodPerspective");
-    var inputField = vodPerspectiveDiv.querySelector(".urlTwitch");
-    var generateButton = vodPerspectiveDiv.querySelector("button");
-    inputField.disabled = false;
-    generateButton.disabled = false;
-  }
-
-  function getVideoIdFromUrl(url) {
-    var parts = url.split("/");
-    var videoId = parts[parts.length - 1];
-    return videoId;
-  }
-</script>

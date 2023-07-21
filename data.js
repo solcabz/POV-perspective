@@ -224,7 +224,7 @@ function arrayvods(varray, name){
         var color="red";
         var link = "novod";
         cl(link, color, name);
-        document.getElementById('infodiv').innerText = `${varray.length} vod(s) and this timestamp wasn't found in any of them. Rclick to remove bubble.`;
+        document.getElementById('infodiv').innerText = `${varray.length} vod(s) and this timestamp wasn't found in any of them. try to adjust timestamp, Rclick to remove bubble.`;
     }
 }
 

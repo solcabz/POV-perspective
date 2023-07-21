@@ -17,9 +17,12 @@ input {
   width: 350px;
   border-radius: 9px;
   color: #2b2b2b;
+  padding: 0 12px;
+  box-sizing: border-box;
 }
 
 input[type="text"]:focus {
+  
   border: 3px solid #e2b24a;
   outline: none;
 }
@@ -171,15 +174,12 @@ form{
 }
 
 .ce {
-  display: inline-block;
   height: 100%;
-  margin-right: .5%;
   border-radius:6px;
   padding: 0 7px;
   display: flex;
   align-items: center;
-  margin:  .5% 5px;
-  cursor: pointer;
+  margin: .5% 5px;
   text-align: center;
 }
 .ce[data-title]:after{

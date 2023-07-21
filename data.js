@@ -278,8 +278,8 @@ function cl(link, color, name){ //create link
             document.getElementById('infodiv').innerText = "Enter name to search vods. Ctrl+Enter to instantly open links.";
         }
     })
-    if(color === "green"){(ce.style.background = "#00cc7a") && (ce.style.cursor='pointer')}; 
-    if(color === "red"){(ce.style.background = "#7F0423") && (ce.style.cursor='default')}; 
+    if(color === "green"){(ce.style.background = "#7AC06F") && (ce.style.cursor='pointer')}; 
+    if(color === "red"){(ce.style.background = "#C55C62") && (ce.style.cursor='default')}; 
     if(color === "gray"){(ce.style.background = "#505050") && (ce.style.cursor='default')};
     if(color ==="red" || color ==="gray"){
         ce.addEventListener("contextmenu", function(event) {

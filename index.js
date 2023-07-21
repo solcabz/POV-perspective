@@ -1,10 +1,11 @@
 const path = require("path");
 const express = require("express");
+const axios = require('axios');
 const { url } = require("inspector");
 const app = express();
-const TwitchAuth = require('./twtich/authTwitch');
+// const TwitchAuth = require('./twtich/authTwitch');
 
-const twitchAuth = new TwitchAuth();
+// const twitchAuth = new TwitchAuth();
 const Port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: false }));
@@ -14,12 +15,9 @@ app.get("/", async (req, res) => {
   res.sendFile("index.html", { root: "./" });
 });
 
-
 app.listen(Port, () => {
   console.log("Listening on Port " + Port);
 });
-
-
 
 app.use((err, req, res, next) => {
   if (err.status === 400) {

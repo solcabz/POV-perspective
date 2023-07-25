@@ -258,6 +258,7 @@ function arrayvods(varray, name) {
   const offset = parseInt(
     document.getElementById("finderwrap").getAttribute("data-offset")
   );
+  
   const stime = time + offset;
 
   console.log(stime);
